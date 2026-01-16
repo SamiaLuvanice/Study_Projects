@@ -1,0 +1,86 @@
+body {
+    background: linear-gradient(to top, #F26DF9, #F4D7EC, #ebebeb);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    min-height: 100vh;
+}
+
+.diary-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2,
+h3 {
+    color: #5158BB;
+}
+
+textarea.form-control,
+input.form-control {
+    border-radius: 12px;
+    background-color: #ffffff;
+    border: 1px solid #D6D2D2;
+}
+
+.diary-entry {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    border-left: 5px solid #F26DF9;
+}
+
+.entry-display {
+    background-color: #ffffff;
+    border-left: 5px solid #EB4B98;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 1rem;
+    color: #333;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.btn-primary {
+    background-color: #5158BB;
+    border: none;
+}
+
+.btn-success {
+    background-color: #F26DF9;
+    border: none;
+}
+
+.btn-outline-primary {
+    border-color: #5158BB;
+    color: #5158BB;
+}
+
+.btn-outline-primary:hover {
+    background-color: #5158BB;
+    color: #fff;
+}
+
+.btn-outline-danger {
+    border-color: #EB4B98;
+    color: #EB4B98;
+}
+
+.btn-outline-danger:hover {
+    background-color: #EB4B98;
+    color: #fff;
+}
+
+#headerTitle {
+    color: #ffffff;
+    /* tom de cinza mais suave */
+}
+
+#noteCount {
+    background-color: #ffffff;
+    color: #4B4B4B;
+}
+
+.entry-date {
+    color: #EB4B98 !important;
+}

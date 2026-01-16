@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base dark theme */
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-black text-gray-100 antialiased;
+  background-image: radial-gradient(1200px 800px at 10% -20%, rgba(249,115,22,0.08), transparent),
+                    radial-gradient(1200px 800px at 110% 10%, rgba(236,72,153,0.07), transparent);
+}
+
+.container {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+/* Card with transparency and blur */
+.card {
+  @apply bg-black/40 backdrop-blur-md border border-pink-500/20 rounded-xl p-4 shadow-glow;
+}
+
+a.gradient {
+  @apply bg-gradient-to-r from-brand-orange to-brand-pink bg-clip-text text-transparent;
+}

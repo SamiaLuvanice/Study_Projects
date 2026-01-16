@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diário pessoal para registrar seus pensamentos e sentimentos">
+    <meta name="keywords" content="diário, journal, sentimentos, registro pessoal">
+    <title>Diário Estático</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="hero-banner position-relative text-center">
+        <img src="img/cap.png" class="d-block w-100" alt="plano de fundo com flores">
+        <div class="hero-text">
+            <p class="fs-1 fw-bold m-0">MY DAILY</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 ms-lg-5">
+                <h2 id="diary-title" class="mt-5 mb-5 text-center title-outside">🌸 Seja bem-vinda, Sâmia! 🌸</h2>
+                <section class="diary-form" aria-labelledby="diary-title">
+                    <form action="#" method="post">
+                        <div class="mb-3">
+                            <label for="entryDate" class="form-label">📅 Data</label>
+                            <input type="date" class="form-control" id="entryDate" name="entryDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="entryText" class="form-label">📝 Descreva seu dia</label>
+                            <textarea class="form-control" id="entryText" name="entryText" rows="6"
+                                placeholder="Hoje eu me senti..." required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-outline-warning mt-3">Enviar Nota</button>
+                        </div>
+                    </form>
+                </section>
+
+                <h2 id="entries-title" class="mt-5 mb-5 text-center title-outside">Histórico:</h2>
+                <section class="entry-list" aria-labelledby="entries-title">
+                    <article class="entry-box">
+                        <div class="entry-display">
+                            <header>
+                                <h3 class="entry-date">
+                                    📅 <time datetime="2025-07-04" lang="pt-br">04/07/2025</time>
+                                </h3>
+                            </header>
+                            <p>Hoje foi um dia de renovação. Pela manhã, aproveitei para cuidar das minhas plantas e regar cada uma com carinho. À tarde, finalmente comecei a ler aquele livro que estava na minha lista há meses. A noite foi tranquila, com uma ligação especial da minha melhor amiga. 🌱📚💖</p>
+                        </div>
+                    </article>
+
+                    <article class="entry-box">
+                        <div class="entry-display">
+                            <header>
+                                <h3 class="entry-date">
+                                    📅 <time datetime="2025-07-03" lang="pt-br">03/07/2025</time>
+                                </h3>
+                            </header>
+                            <p>Dia de desafios no trabalho, mas consegui resolver todos os problemas que apareceram. Almocei no novo restaurante vegetariano perto do escritório e adorei a experiência! À noite, assisti a um documentário inspirador sobre sustentabilidade que me fez refletir sobre meus hábitos. 💼🍽️🌍</p>
+                        </div>
+                    </article>
+
+                    <article class="entry-box">
+                        <div class="entry-display">
+                            <header>
+                                <h3 class="entry-date">
+                                    📅 <time datetime="2025-07-02" lang="pt-br">02/07/2025</time>
+                                </h3>
+                            </header>
+                            <p>Acordei com vontade de mudar minha rotina. Fiz uma aula de yoga ao nascer do sol e me surpreendi com minha flexibilidade! No final do dia, preparei um jantar especial para mim mesma, com velas e minha música favorita. Descobri que esses pequenos momentos de autocuidado fazem toda a diferença. 🧘‍♀️🕯️🎶</p>
+                        </div>
+                    </article>
+
+                    <article class="entry-box">
+                        <div class="entry-display">
+                            <header>
+                                <h3 class="entry-date">
+                                    📅 <time datetime="2025-07-01" lang="pt-br">01/07/2025</time>
+                                </h3>
+                            </header>
+                            <p>Primeiro dia do mês e decidi começar um novo projeto pessoal. Visitei minha avó e passamos a tarde relembrando histórias antigas da família. Voltei para casa com o coração aquecido e muitas receitas tradicionais anotadas no meu caderno. 👵✍️🍪</p>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-5 py-3 text-center">
+        <p>© 2025 My Daily - Todos os direitos reservados</p>
+    </footer>
+
+    <a href="#" class="btn btn-outline-secondary position-fixed bottom-0 end-0 m-3">
+        ↑ Topo
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

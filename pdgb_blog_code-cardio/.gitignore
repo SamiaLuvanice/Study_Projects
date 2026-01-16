@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Production
+build/
+
+# Misc
+.DS_Store
+*.swp
+*.swo
+*.tmp
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Env files (contêm dados sensíveis)
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs e editores
+.vscode/
+.idea/
+*.iml

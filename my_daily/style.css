@@ -1,0 +1,127 @@
+body {
+    background: linear-gradient(to top, #D6D2D2, #F4D7EC, #F26DF9);
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    height: 25vh;
+    min-height: 200px;
+    /* Altura mínima para mobile */
+    overflow: hidden;
+}
+
+.hero-banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    width: 100%;
+    /* Garante que não ultrapasse a tela */
+    padding: 0 15px;
+    /* Prevenção para mobile */
+}
+
+/* Conteúdo principal */
+main {
+    padding: 2rem 0;
+}
+
+.diary-form,
+.entry-box {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diary-form:hover,
+.entry-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.form-control:focus {
+    border-color: #EB4B98;
+    box-shadow: 0 0 0 0.25rem rgba(235, 75, 152, 0.25);
+}
+
+.btn-outline-warning {
+    transition: all 0.3s ease;
+}
+
+/* Entradas do diário */
+.entry-display {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-left: 5px solid #EB4B98;
+    background-color: rgba(220, 220, 220, 0.6);
+    border-radius: 0 12px 12px 0;
+    /* Só arredonda os lados direitos */
+}
+
+/* Tipografia */
+h1,
+h2,
+h3 {
+    color: #5158BB;
+}
+
+.entry-date {
+    color: #EB4B98;
+    margin-bottom: 0.5rem;
+}
+
+.entry-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title-outside {
+    margin-bottom: 2rem;
+}
+
+/* Botão de voltar ao topo */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    padding: 10px 15px;
+    border-radius: 50%;
+    background-color: #5158BB;
+    color: white;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 20vh;
+    }
+
+    .hero-text p {
+        font-size: 1.8rem !important;
+    }
+
+    .diary-form,
+    .entry-box {
+        padding: 1.5rem;
+    }
+}
