@@ -1,23 +1,55 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
 
-    <main class="main">
+  <body>
+    <main id="main">
       <header>
-        <img src="./logo.png" alt="" class="logo">
+        <img src="./logo.png" alt="" class="logo" />
+        <div class="menu">
+          <a class="menu-link" href="">Home</a>
+          <a class="menu-link" href="">Services</a>
+          <a class="menu-link" href="">About</a>
+          <a class="menu-link" href="">Projects</a>
+          <a class="menu-link" href="">Blogs</a>
+          <a class="menu-link" href="">Testimonials</a>
+        </div>
+
+        <button class="btn">Contact Me</button>
       </header>
+
+      <!-- Page Section Started -->
+
+      <div id="page">
+        <div class="hero-heading">
+          <h6>-Hello</h6>
+          <h1>I'm <span>Jenny,</span> Software Developer</h1>
+        </div>
+        <div class="image">
+          <img src="./heroImg.png" alt="Hero Image" />
+          <div class="btn-group">
+            <button class="port">Portfolio</button>
+            <button class="hire">Hire Me</button>
+          </div>
+        </div>
+        <div class="left-side">
+          <h4>450+</h4>
+          <p>Happy Clients</p>
+          <img src="./leftSide.png" alt="Life Side" />
+        </div>
+      </div>
     </main>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
       integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
-      crossorigin="anonymous"referrerpolicy="no-referrer"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
 
     <script src="main.js"></script>
