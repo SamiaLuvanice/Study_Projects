@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+}
+
+.box {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.bounce {
+  background: #ff6f61;
+}
+
+.elastic {
+  background: #6a5acd;
+}
+
+.expo {
+  background: #20b2aa;
+}
+
+.power {
+  background: salmon;
+}
