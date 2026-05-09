@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollTrigger Full Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-white relative z-0 relative bg-zinc-800">
+
+    <div class="w-full h-[100vh] flex items-center justify-center flex-col" id="page">
+        <h1 class="text-5xl mb-10 font-bold">ScrollTrigger With GSAP</h1>
+        <h2 class="text-xl">Animation Start</h2>
+    </div>
+
+    <div class="cards h-[290vh] px-[1rem] md:px-[3rem] lg:px-[6rem] space-y-10">
+        <div class="h-[90vh] card w-full sticky top-10 z-[0] pt-[3.6rem] pl-[4rem]">
+            <img class="absolute top-0 left-0 h-full object-cover z-[-1] rounded-3xl" src="./img/1.png" alt="" />
+        </div>
+        <div class="h-[90vh] card w-full sticky top-10 z-[0] pt-[5rem] pl-[4rem]">
+            <img class="absolute top-0 left-0 h-full object-cover z-[-1] rounded-3xl" src="./img/2.png" alt="" />
+        </div>
+        <div class="h-[90vh] card w-full sticky top-10 z-[0] pt-[3.6rem] pl-[4rem]">
+            <img class="absolute top-0 left-0 h-full object-cover z-[-1] rounded-3xl" src="./img/3.png" alt="" />
+        </div>
+    </div>
+
+    <div class="w-full h-[400vh] flex items-center justify-center" id="page">
+        <h2 class="text-5xl mb-10 font-bold">Animation End</h2>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="scroll.js"></script>
+</body>
+
+</html>
