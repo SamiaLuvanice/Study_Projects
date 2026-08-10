@@ -2,7 +2,7 @@
 
 Repositório desenvolvido durante o curso de **FastAPI**, com foco na construção de APIs modernas utilizando Python e boas práticas de desenvolvimento.
 
-Ao longo do projeto, novas ferramentas e bibliotecas são incorporadas gradualmente, permitindo compreender não apenas o funcionamento do FastAPI, mas também práticas importantes para **qualidade de código, testes e gerenciamento de dependências**.
+Ao longo do projeto, novas ferramentas e bibliotecas são incorporadas gradualmente, permitindo compreender não apenas o funcionamento do FastAPI, mas também práticas importantes para **qualidade de código, validação de dados, testes e gerenciamento de dependências**.
 
 ---
 
@@ -10,13 +10,157 @@ Ao longo do projeto, novas ferramentas e bibliotecas são incorporadas gradualme
 
 Até o momento, o projeto utiliza:
 
-| Ferramenta    | Finalidade                                          |
-| ------------- | --------------------------------------------------- |
-| 🐍 **Python** | Linguagem utilizada no desenvolvimento da aplicação |
-| ⚡ **FastAPI** | Framework para criação de APIs com Python           |
-| 📦 **Poetry** | Gerenciamento de dependências e ambiente do projeto |
-| 🧹 **Ruff**   | Análise, linting e formatação do código Python      |
-| 🧪 **Pytest** | Criação e execução de testes automatizados          |
+| Ferramenta      | Finalidade                                          |
+| --------------- | --------------------------------------------------- |
+| 🐍 **Python**   | Linguagem utilizada no desenvolvimento da aplicação |
+| ⚡ **FastAPI**   | Framework para criação de APIs com Python           |
+| 🔷 **Pydantic** | Validação, tipagem e modelagem dos dados da API     |
+| 📦 **Poetry**   | Gerenciamento de dependências e ambiente do projeto |
+| 🧹 **Ruff**     | Análise, linting e formatação do código Python      |
+| 🧪 **Pytest**   | Criação e execução de testes automatizados          |
+
+---
+
+# ⚡ FastAPI
+
+O **FastAPI** é o framework utilizado para construir a API deste projeto.
+
+Ele permite desenvolver APIs utilizando Python de maneira rápida, organizada e com suporte a recursos modernos, como:
+
+* Rotas;
+* Validação de dados;
+* Tipagem;
+* Documentação automática;
+* Operações assíncronas;
+* Integração com ferramentas de testes.
+
+Um exemplo básico de uma aplicação FastAPI:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+def read_root():
+    return {"message": "Olá, FastAPI!"}
+```
+
+Para executar a aplicação:
+
+```bash
+fastapi dev app.py
+```
+
+A documentação interativa da API pode ser acessada através do Swagger UI:
+
+```text
+/docs
+```
+
+---
+
+# 🔷 Pydantic
+
+O **Pydantic** é uma biblioteca utilizada para **validação e modelagem de dados em Python**, baseada em *type hints*.
+
+No FastAPI, ele possui um papel importante na definição dos dados que a API **recebe e retorna**, permitindo validar automaticamente as informações enviadas nas requisições.
+
+### Para que serve?
+
+O Pydantic ajuda a:
+
+* Definir a estrutura dos dados;
+* Validar informações recebidas pela API;
+* Garantir os tipos dos dados;
+* Informar quais campos são obrigatórios ou opcionais;
+* Converter dados para os tipos esperados quando possível;
+* Gerar esquemas utilizados na documentação da API.
+
+### Exemplo
+
+Podemos criar um modelo para representar um usuário:
+
+```python
+from pydantic import BaseModel
+
+
+class User(BaseModel):
+    name: str
+    email: str
+    age: int
+```
+
+Esse modelo determina que um `User` deve possuir:
+
+* `name` → texto (`str`);
+* `email` → texto (`str`);
+* `age` → número inteiro (`int`).
+
+### Utilizando com FastAPI
+
+O Pydantic pode ser utilizado diretamente nos endpoints do FastAPI:
+
+```python
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+
+class User(BaseModel):
+    name: str
+    email: str
+    age: int
+
+
+@app.post("/users")
+def create_user(user: User):
+    return user
+```
+
+Nesse exemplo, o FastAPI utiliza o modelo `User` para validar automaticamente os dados enviados na requisição.
+
+Uma requisição válida poderia ser:
+
+```json
+{
+    "name": "Maria",
+    "email": "maria@email.com",
+    "age": 25
+}
+```
+
+Caso os dados não estejam de acordo com o modelo definido, o FastAPI retorna automaticamente uma resposta informando os erros de validação.
+
+### 🔗 Relação entre FastAPI e Pydantic
+
+Podemos pensar na divisão de responsabilidades da seguinte maneira:
+
+```text
+                  Requisição HTTP
+                         │
+                         ▼
+                      FastAPI
+                         │
+                         ▼
+                     Pydantic
+                         │
+                  Valida os dados
+                         │
+                ┌────────┴────────┐
+                │                 │
+             Válido            Inválido
+                │                 │
+                ▼                 ▼
+           Endpoint          Erro de validação
+                │
+                ▼
+             Resposta
+```
+
+Assim, enquanto o **FastAPI** é responsável pela construção e funcionamento da API, o **Pydantic** ajuda a garantir que os dados utilizados pela aplicação estejam de acordo com a estrutura e os tipos definidos.
 
 ---
 
@@ -155,65 +299,31 @@ Se tudo estiver correto, o Pytest apresentará o resultado dos testes executados
 
 ---
 
-# ⚡ FastAPI
-
-O **FastAPI** é o framework utilizado para construir a API deste projeto.
-
-Ele permite desenvolver APIs utilizando Python de maneira rápida, organizada e com suporte a recursos modernos, como:
-
-* Rotas;
-* Validação de dados;
-* Tipagem;
-* Documentação automática;
-* Operações assíncronas;
-* Integração com ferramentas de testes.
-
-Um exemplo básico de uma aplicação FastAPI:
-
-```python
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"message": "Olá, FastAPI!"}
-```
-
-Para executar a aplicação:
-
-```bash
-fastapi dev app.py
-```
-
-A documentação interativa da API pode ser acessada através do Swagger UI:
-
-```text
-/docs
-```
-
----
-
 # 🔄 Como as ferramentas trabalham juntas
 
 Uma das propostas do curso é entender que o desenvolvimento de uma API não depende apenas do framework.
 
-As ferramentas possuem responsabilidades diferentes:
+Cada ferramenta possui uma responsabilidade diferente:
 
 ```text
                     Projeto FastAPI
                           │
-          ┌───────────────┼────────────────┐
-          │               │                │
-       Poetry           Ruff            Pytest
-          │               │                │
-    Dependências      Qualidade          Testes
-    e ambiente       do código        automatizados
-          │               │                │
-          └───────────────┼────────────────┘
+          ┌───────────────┼─────────────────┐
+          │               │                 │
+       Poetry           Ruff             Pytest
+          │               │                 │
+    Dependências      Qualidade           Testes
+    e ambiente       do código         automatizados
+          │               │                 │
+          └───────────────┼─────────────────┘
                           │
                        FastAPI
+                          │
+                          ▼
+                      Pydantic
+                          │
+                          ▼
+                   Validação dos dados
                           │
                           ▼
                     API em Python
@@ -221,13 +331,15 @@ As ferramentas possuem responsabilidades diferentes:
 
 ### Resumindo
 
-**Poetry** → gerencia o projeto e suas dependências.
+**FastAPI** → permite construir a API.
+
+**Pydantic** → valida e modela os dados utilizados pela API.
+
+**Poetry** → gerencia o projeto, ambiente e dependências.
 
 **Ruff** → ajuda a manter a qualidade e padronização do código.
 
 **Pytest** → verifica se o código está funcionando corretamente.
-
-**FastAPI** → permite construir a API.
 
 ---
 
@@ -277,6 +389,7 @@ As ferramentas serão adicionadas gradualmente ao longo do curso.
 
 * [x] Python
 * [x] FastAPI
+* [x] Pydantic
 * [x] Poetry
 * [x] Ruff
 * [x] Pytest
@@ -296,6 +409,7 @@ Além de aprender a criar endpoints, o projeto busca desenvolver conhecimentos r
 
 * Organização de projetos Python;
 * Gerenciamento de dependências;
+* Modelagem e validação de dados;
 * Qualidade e padronização de código;
 * Testes automatizados;
 * Boas práticas de desenvolvimento;
