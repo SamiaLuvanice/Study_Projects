@@ -9,5 +9,5 @@
 ## Aula 03 Criando Rotas CRUD 2025
 ### https://www.youtube.com/watch?v=bi6kzV21ucs
 
-| Tempo do último acesso: 0:00:00
+| Tempo do último acesso: 0:33:00
 

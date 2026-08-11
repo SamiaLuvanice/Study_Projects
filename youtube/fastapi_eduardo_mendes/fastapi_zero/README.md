@@ -42,9 +42,9 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("/")
+@app.get('/')
 def read_root():
-    return {"message": "Olá, FastAPI!"}
+    return {'message': 'Olá, FastAPI!'}
 ```
 
 Para executar a aplicação:
@@ -115,7 +115,7 @@ class User(BaseModel):
     age: int
 
 
-@app.post("/users")
+@app.post('/users')
 def create_user(user: User):
     return user
 ```
