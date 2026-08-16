@@ -1,7 +1,7 @@
 # Curso de FastAPI 2025
 
-## Aula 01 | Configuração do ambiente e hello world com testes 
-### https://www.youtube.com/watch?v=f6bkf67lXLo 
+## Aula 01 | Configuração do ambiente e hello world com testes
+### https://www.youtube.com/watch?v=f6bkf67lXLo
 
 ## Aula 02 | Fundamentos do desenvolvimento web
 ### https://www.youtube.com/watch?v=JFJErxis_ZM
@@ -12,7 +12,12 @@
 
 ## Antes da Aula 04
 ![alt text](image.png)
+
+## SQLAlchemy
 ### https://www.youtube.com/watch?v=t4C1c62Z4Ag
+| Tempo do último acesso: 01:24:00
+
+
 ### https://www.youtube.com/watch?v=yQtqkq9UkDA
 ### https://www.youtube.com/watch?v=DiiKff1z2Yw
 
@@ -20,4 +25,3 @@
 ### https://www.youtube.com/watch?v=I7IrmN7jMqE
 
 | Tempo do último acesso: 00:00:00
-

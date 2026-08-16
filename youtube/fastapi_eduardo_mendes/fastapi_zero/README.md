@@ -18,6 +18,7 @@ Até o momento, o projeto utiliza:
 | 📦 **Poetry**   | Gerenciamento de dependências e ambiente do projeto |
 | 🧹 **Ruff**     | Análise, linting e formatação do código Python      |
 | 🧪 **Pytest**   | Criação e execução de testes automatizados          |
+| 🗄️ **SQLAlchemy** | ORM para modelagem e acesso ao banco de dados      |
 
 ---
 
@@ -161,6 +162,71 @@ Podemos pensar na divisão de responsabilidades da seguinte maneira:
 ```
 
 Assim, enquanto o **FastAPI** é responsável pela construção e funcionamento da API, o **Pydantic** ajuda a garantir que os dados utilizados pela aplicação estejam de acordo com a estrutura e os tipos definidos.
+
+---
+
+# 🗄️ SQLAlchemy
+
+O **SQLAlchemy** é uma biblioteca Python utilizada para trabalhar com **bancos de dados relacionais**. No projeto FastAPI, ele pode ser utilizado como **ORM (Object-Relational Mapper)**, permitindo representar tabelas do banco por meio de classes Python e realizar operações no banco sem escrever SQL diretamente na maior parte dos casos.
+
+### Para que serve?
+
+O SQLAlchemy ajuda a:
+
+* Definir tabelas e relacionamentos por meio de modelos Python;
+* Criar, consultar, atualizar e remover registros;
+* Organizar a comunicação entre a aplicação e o banco de dados;
+* Trabalhar com diferentes bancos relacionais;
+* Integrar a camada de persistência de dados à aplicação FastAPI.
+
+### Exemplo de modelo
+
+```python
+from sqlalchemy import String
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+
+
+class Base(DeclarativeBase):
+    pass
+
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(100))
+    email: Mapped[str] = mapped_column(String(100), unique=True)
+```
+
+Nesse exemplo, a classe `User` representa a tabela `users`. Cada atributo mapeado corresponde a uma coluna do banco de dados.
+
+### 🔗 Relação entre FastAPI, Pydantic e SQLAlchemy
+
+```text
+Requisição HTTP
+      │
+      ▼
+   FastAPI
+      │
+      ▼
+   Pydantic
+Valida os dados
+      │
+      ▼
+  SQLAlchemy
+Acessa/persiste os dados
+      │
+      ▼
+Banco de dados
+```
+
+De forma simplificada, o **FastAPI** recebe a requisição, o **Pydantic** valida os dados e o **SQLAlchemy** cuida da comunicação e persistência no banco de dados.
+
+### Adicionando com Poetry
+
+```bash
+poetry add sqlalchemy
+```
 
 ---
 
@@ -335,6 +401,8 @@ Cada ferramenta possui uma responsabilidade diferente:
 
 **Pydantic** → valida e modela os dados utilizados pela API.
 
+**SQLAlchemy** → modela e realiza a persistência dos dados no banco de dados.
+
 **Poetry** → gerencia o projeto, ambiente e dependências.
 
 **Ruff** → ajuda a manter a qualidade e padronização do código.
@@ -390,6 +458,7 @@ As ferramentas serão adicionadas gradualmente ao longo do curso.
 * [x] Python
 * [x] FastAPI
 * [x] Pydantic
+* [x] SQLAlchemy
 * [x] Poetry
 * [x] Ruff
 * [x] Pytest
