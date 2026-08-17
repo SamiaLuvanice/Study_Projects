@@ -15,10 +15,11 @@
 
 ## SQLAlchemy
 ### https://www.youtube.com/watch?v=t4C1c62Z4Ag
-| Tempo do último acesso: 01:24:00
 
-
+## Alembic e SQLAlchemy
 ### https://www.youtube.com/watch?v=yQtqkq9UkDA
+| Tempo do último acesso: 00:12:00
+
 ### https://www.youtube.com/watch?v=DiiKff1z2Yw
 
 ## Aula 04 | Banco de Dados com SQLAlchemy e Gerenciando Migrações com Alembic
