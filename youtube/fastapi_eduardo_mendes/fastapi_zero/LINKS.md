@@ -18,7 +18,7 @@
 
 ## Alembic e SQLAlchemy
 ### https://www.youtube.com/watch?v=yQtqkq9UkDA
-| Tempo do último acesso: 00:12:00
+| Tempo do último acesso: 01:21:00
 
 ### https://www.youtube.com/watch?v=DiiKff1z2Yw
 
