@@ -23,7 +23,7 @@
 ## Aula 04 | Banco de Dados com SQLAlchemy e Gerenciando Migrações com Alembic
 ### https://www.youtube.com/watch?v=I7IrmN7jMqE
 
-| Tempo do último acesso: 00:45:40
 
 ## Aula 05 | Integrando Banco de Dados (SQLAlchemy) ao FastAPI
 ### https://www.youtube.com/watch?v=bm7_rA7NOB4
+| Tempo do último acesso: 00:00:00
